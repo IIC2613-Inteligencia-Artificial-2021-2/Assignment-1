@@ -1,5 +1,5 @@
 #+Title: Tarea 1
-#+author:
+#+author: Dietrich Daroch
 #+language: es
 
 * Setup                                                            :ignore:
@@ -8,6 +8,8 @@
    #+seq_todo: TODO | REVIEW DONE
 
 *** export options                                                   :ignore:
+   # Use sub-sub-sub-section
+   #+options: H:4
    # We have a custom title
    #+options: title:nil
    # We don't want a table of contents
@@ -36,30 +38,18 @@
      #+LATEX_HEADER: \usepackage{algorithmic}
      #+LATEX_HEADER: \usepackage[nothing]{algorithm}
 
+**** Code                                                            :ignore:
+     #+LATEX_HEADER: \usepackage{minted}
+     #+LATEX_HEADER: \setminted[python] {
+     #+LATEX_HEADER:   linenos=false,
+     #+LATEX_HEADER:   autogobble=true,
+     #+LATEX_HEADER:   frame=lines,
+     #+LATEX_HEADER:   framesep=2mm,
+     #+LATEX_HEADER:   fontsize=\footnotesize
+     #+LATEX_HEADER: }
+
 *** Aliases                                                          :ignore:
-    #+LATEX_HEADER: \newcommand{\RR}{\mathbb{R}}
-    #+LATEX_HEADER: \newcommand{\lb}{\\~\\}
-
-    #+LATEX_HEADER: \newcommand{\twopartdef}[4]
-    #+LATEX_HEADER: {
-    #+LATEX_HEADER: 	\left\{
-    #+LATEX_HEADER: 		\begin{array}{ll}
-    #+LATEX_HEADER: 			#1 &  \text{si }#2 \\
-    #+LATEX_HEADER: 			#3 &  \text{si }#4
-    #+LATEX_HEADER: 		\end{array}
-    #+LATEX_HEADER: 	\right.
-    #+LATEX_HEADER: }
-
-    #+LATEX_HEADER: \newcommand{\threepartdef}[6]
-    #+LATEX_HEADER: {
-    #+LATEX_HEADER: 	\left\{
-    #+LATEX_HEADER: 		\begin{array}{ll}
-    #+LATEX_HEADER: 			#1 &  \text{si }#2 \\
-    #+LATEX_HEADER: 			#3 &  \text{si }#4 \\
-    #+LATEX_HEADER: 			#5 &  \text{si }#6
-    #+LATEX_HEADER: 		\end{array}
-    #+LATEX_HEADER: 	\right.
-    #+LATEX_HEADER: }
+    #+LATEX_HEADER: \newcommand{\astar}{$A^*$}
 
 *** Other                                                            :ignore:
     # https://tex.stackexchange.com/questions/8351/what-do-makeatletter-and-makeatother-do
@@ -81,13 +71,142 @@
 
    #+LATEX: \begin{center}
    #+LATEX: \bf IIC2613 - Inteligencia Artificial\\
-   #+LATEX: \bf 2do semestre del 2021\lb
+   #+LATEX: \bf 2do semestre del 2021\\~\\
 
-   #+LATEX: \vspace{0.5cm}
+   #+LATEX: \vspace{0.4cm}
 
    #+LATEX: \bf {\Huge Tarea 1}
    #+LATEX: \end{center}
 
-* Sección
-** Subsección
-   ~org-mode~ rocks
+* Tasks                                                     :ignore:noexport:
+** TODO Agregar código de honor
+** TODO Implementar Sokoban
+** TODO Forkear Search-py
+*** TODO Agregar stub para A*
+*** TODO Agregar stub para IDDFS
+*** TODO Agregar archivos para las preguntas de desarrollo
+
+* Repositorio
+  Esta tarea usa ~git~. Usted trabajará individualmente en un /fork/ del
+  repositorio de la tarea al que se le dará acceso.
+
+  Las preguntas públicas respecto a la tarea deben ser hechas a través de
+  [[https://github.com/IIC2613-Inteligencia-Artificial-2021-2/Syllabus/issues/new][/issues/]] en github.
+
+* Código
+  Hay implementaciones parciales para ordenar su código detro del proyecto y
+  también tests que se refieren a estas funciones parcialmente implementadas.
+  Como parte de la implementación se espera que pasen los tests deshabilitados.
+
+  #+caption: Un test deshabilitado. Borrar la línea del /decorator/ de pytest lo habilita.
+  #+begin_src python
+    @pytest.mark.skip(reason="TODO: Implement as part of the assignment.")
+    def test_numbers():
+        assert 0 <= 1, "This holds, right?"
+  #+end_src
+
+** Tests
+   Puede ejecutar los tests con [[https://pytest.org][~pytest~]]. Note que hay test ignorados marcados
+   con una ~s~ (/skipped/) que eventualmente deberían habilitarse y pasar.
+
+** Formato
+   El proyecto usa [[https://black.readthedocs.io/][~black~Agregar stub para A*]] para evitar tener que tomar decisiones de formato.
+   Se espera que cada commit pase los checks de ~black .~. De lo contrario se
+   descontarán 0.5 puntos.
+
+** ~git~ hooks
+   Se recomienda habilitar ~pre-commit~ hooks con tal de evitar romper tests
+   o el formato accidentalmente.
+
+\newpage
+
+* Búsqueda
+** Problemas
+*** 15-puzzle
+    El [[https://en.wikipedia.org/wiki/15_puzzle][Puzzle de 15]] fue mencionado en varias ocaciones ya que es bastate
+    sencillo obtener buenas heurísticas.
+
+    - [0.2] Implemente la heurística mencionada en clases de la suma de las
+      distancias de Manhattan entre las losetas (/tiles/) y su posición final.
+    - [0.1] ?`Es esta heurística admisible? Justifique
+    - [0.3] ?`Es esta heurística consistente? Justifique
+
+*** Sokoban
+    El [[https://en.wikipedia.org/wiki/Sokoban][Sokoban]] es un puzzle en que un agente debe ordenar una bodega y ubicar
+    cajas en algunas posiciones específicas.
+
+    En clases y ayudantías mencionamos que una buena heurística es la de
+    sumar las distancias de Manhattan entre cada caja y su objetivo más cercano.
+    - [0.2] Implemente esta heurística.
+    - [0.3] Notando que el agente tiene que acercarse a las cajas es fácil notar
+      que falta contar acciones. Implemente esta versión mejorada de la
+      heurística.
+    - [0.7] Implemente una heurística estrictamente mejor que las anteriores.
+      - ?`Por qué su heurística es mejor?
+      - Agregue un test mostrando un estado en que:
+        - Su heurística sea mejor.
+        - Su heurística sea admisible. Use BFS para verificar el costo óptimo.
+
+*** Sudoku
+    El [[https://en.wikipedia.org/wiki/Sudoku][Sudoku]] es un juego bastante popular en que hay que llenar un tablero
+    sin repetir dígitos en columnas, filas y bloques.
+
+    - Pese a que para este puzzle conocemos $h^*$, usar \astar no es ideal.
+      - [0.2] ?`Cómo se comportan BFS y DFS? ?`Cuál encuentra soluciones antes?
+      - [0.5] ?`Por qué \astar no es ideal para resolver sudokus?
+      - [0.3] ?`Cómo se comporta \astar con $h^*$ en este puzzle de costos uniformes?
+
+** Algoritmos
+*** ID-DFS
+    Los problemas más graves de DFS son que no es completo para grafos
+    infinitos, y aún más lamentable, que no es óptimo ni si quiera en grafos
+    finitos.
+
+    Iterative deepening DFS soluciona ambos problemas al imponer límites
+    incrementales de profundidad.
+
+    - [0.3] Implemente ID-DFS y logre pasar los tests de optimalidad.
+
+*** \astar
+**** [0.8] Implemente \astar
+     Consulte la implementación de Dijkstra y de Greedy search para
+     familiarizarse con el /intrusive heap/ de Open y el uso de heurísticas.
+
+**** Desempates
+     Una implementación ingenua de \astar simplemente escoge nodos por mejor
+     valor $f$, pero en muchos problemas el valor de $f$ es bastante uniforme y
+     no se logra rankear nodos efectivamente.
+
+     - [0.2] Implemente desempates optimistas usando mayor $g$ o menor $h$.
+
+* Búsqueda con Adversario
+** Algoritmos híbridos
+   Suponga que tiene implementaciones de,
+   - Poda alfa-beta con,
+     - Ranking de acciones
+     - Estimación de estados
+     - Estimación de a qué profundidad cortar junto con un límite fijo.
+   - Monte-Carlo tree search (MTCS) con,
+     - Estimación de a qué profundidad cortar junto con un límite fijo.
+
+   Al crear un algoritmo híbrido tenemos la opción de correr primero poda
+   alfa-beta y luego cambiar a MTCS, o viceversa.
+
+   - [0.2] ?`Qué orden de algoritmos usaría? Justifique.
+
+** Búsqueda con Adversario
+*** Algoritmos
+    Suponga que hay un árbol de juego con $b$ ramas por nivel y una profundidad
+    $d$.
+    - [0.1] ?`Cuántos nodos exploraría minimax?
+    - [0.1] ?`Cuántos nodos exploraría poda alfa-beta en el peor caso?
+    - [0.5] ?`Cuántos nodos exploraría poda alfa-beta en el mejor caso?
+
+*** Multijugador
+   - Suponga que hay un juego determinista y conocimiento perfecto en que se
+     compite por obtener puntaje de un pool finito, pero que se juegue de a 3
+     o más jugadores.
+     - [0.2] ?`Qué problemas hay al tratar de usar minimax y poda alfa-beta?
+     - [0.6] ?`Cómo podemos adaptar poda alfa-beta para resolver el problema con
+       $N$ jugadores?
+     - [0.2] ?`Cómo podemos adaptar Monte-Carlo Tree Search?
