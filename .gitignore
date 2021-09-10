@@ -1,0 +1,12 @@
+# Emacs org-mode exports
+auto/
+_minted-*/
+*.bbl
+*.lof
+*.lot
+*.pdf
+*.synctex.gz
+*.tex
+
+# Allow adding raw tex
+!src/*.tex

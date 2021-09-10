@@ -1,0 +1,93 @@
+#+Title: Tarea 1
+#+author:
+#+language: es
+
+* Setup                                                            :ignore:
+** org-mode                                                          :ignore:
+   #+startup: overview
+   #+seq_todo: TODO | REVIEW DONE
+
+*** export options                                                   :ignore:
+   # We have a custom title
+   #+options: title:nil
+   # We don't want a table of contents
+   #+options: toc:nil
+   # We don't numbered sections
+   #+options: num:nil
+   #+options: tasks:t
+   #+options: tags:nil
+   #+options: d:nil
+   #+options: skip:nil ^:nil timestamp:nil
+
+** LaTeX                                                             :ignore:
+*** Latex header                                                     :ignore:
+**** Document class                                                  :ignore:
+     #+LATEX_CLASS: article
+     #+LATEX_CLASS_OPTIONS: [a4paper]
+
+**** Packages                                                        :ignore:
+     #+LATEX_HEADER: \usepackage{fullpage}
+     #+LATEX_HEADER: \usepackage[utf8]{inputenc}
+     #+LATEX_HEADER: \usepackage[spanish]{babel}
+     #+LATEX_HEADER: \usepackage{epsfig}
+     #+LATEX_HEADER: \usepackage{amsmath}
+     #+LATEX_HEADER: \usepackage{amssymb}
+     #+LATEX_HEADER: \usepackage{epstopdf}
+     #+LATEX_HEADER: \usepackage{algorithmic}
+     #+LATEX_HEADER: \usepackage[nothing]{algorithm}
+
+*** Aliases                                                          :ignore:
+    #+LATEX_HEADER: \newcommand{\RR}{\mathbb{R}}
+    #+LATEX_HEADER: \newcommand{\lb}{\\~\\}
+
+    #+LATEX_HEADER: \newcommand{\twopartdef}[4]
+    #+LATEX_HEADER: {
+    #+LATEX_HEADER: 	\left\{
+    #+LATEX_HEADER: 		\begin{array}{ll}
+    #+LATEX_HEADER: 			#1 &  \text{si }#2 \\
+    #+LATEX_HEADER: 			#3 &  \text{si }#4
+    #+LATEX_HEADER: 		\end{array}
+    #+LATEX_HEADER: 	\right.
+    #+LATEX_HEADER: }
+
+    #+LATEX_HEADER: \newcommand{\threepartdef}[6]
+    #+LATEX_HEADER: {
+    #+LATEX_HEADER: 	\left\{
+    #+LATEX_HEADER: 		\begin{array}{ll}
+    #+LATEX_HEADER: 			#1 &  \text{si }#2 \\
+    #+LATEX_HEADER: 			#3 &  \text{si }#4 \\
+    #+LATEX_HEADER: 			#5 &  \text{si }#6
+    #+LATEX_HEADER: 		\end{array}
+    #+LATEX_HEADER: 	\right.
+    #+LATEX_HEADER: }
+
+*** Other                                                            :ignore:
+    # https://tex.stackexchange.com/questions/8351/what-do-makeatletter-and-makeatother-do
+    #+LATEX_HEADER: \makeatletter
+    #+LATEX_HEADER: \makeatother
+
+** Title                                                             :ignore:
+   #+LATEX: \begin{tabular}{ccl}
+   #+LATEX: \begin{tabular}{c}
+   #+LATEX: \includegraphics[width=2.5cm]{Figures/puc-logo.pdf}
+   #+LATEX: \end{tabular}
+   #+LATEX: &\ \ \ &
+   #+LATEX: \begin{tabular}{l}
+   #+LATEX: PONTIFICIA UNIVERSIDAD CATÓLICA DE CHILE\\
+   #+LATEX: ESCUELA DE INGENIERÍA\\
+   #+LATEX: DEPARTAMENTO DE CIENCIAS DE LA COMPUTACIÓN
+   #+LATEX: \end{tabular}
+   #+LATEX: \end{tabular}
+
+   #+LATEX: \begin{center}
+   #+LATEX: \bf IIC2613 - Inteligencia Artificial\\
+   #+LATEX: \bf 2do semestre del 2021\lb
+
+   #+LATEX: \vspace{0.5cm}
+
+   #+LATEX: \bf {\Huge Tarea 1}
+   #+LATEX: \end{center}
+
+* Sección
+** Subsección
+   ~org-mode~ rocks
