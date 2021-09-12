@@ -98,7 +98,8 @@
 
 ** Repositorio
    Ésta tarea usa ~git~. Usted trabajará individualmente en un /fork/ *privado*
-   del [[https://github.com/IIC2613-Inteligencia-Artificial-2021-2/Search-py][repositorio de la tarea]] al que se le dará acceso mediante github.
+   del [[https://github.com/IIC2613-Inteligencia-Artificial-2021-2/Search-py][repositorio de la tarea]] al que se le dará [[https://classroom.github.com/a/YxciFC0g][acceso]] mediante github
+   classrooms.
 
    Su fork debe modificar el código y agregar un documento con las respuestas.
    Para las preguntas de implementación basta referenciar a su código.

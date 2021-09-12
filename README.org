@@ -1,7 +1,7 @@
 #+Title: IIC2613 - Enunciado Tarea 1
 #+language: es
 
-Este repo tiene el enunciade de la tarea 1.
+Este repo tiene el enunciado de la tarea 1.
 
 Para dudas de la tarea, prefieran [[https://github.com/IIC2613-Inteligencia-Artificial-2021-2/Syllabus/issues][agregar issues]] en [[https://github.com/IIC2613-Inteligencia-Artificial-2021-2/Syllabus][Syllabus.]]
 
