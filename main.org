@@ -79,51 +79,96 @@
    #+LATEX: \end{center}
 
 * Tasks                                                     :ignore:noexport:
-** TODO Agregar código de honor
-** TODO Implementar Sokoban
-** TODO Forkear Search-py
-*** TODO Agregar stub para A*
-*** TODO Agregar stub para IDDFS
-*** TODO Agregar archivos para las preguntas de desarrollo
+** DONE Agregar código de honor
+** DONE Implementar Sokoban
+** DONE Forkear Search-py
+*** DONE Agregar stub para A*
+*** DONE Agregar stub para IDDFS
 
-* Repositorio
-  Esta tarea usa ~git~. Usted trabajará individualmente en un /fork/ del
-  repositorio de la tarea al que se le dará acceso.
+** DONE Agregar código de honor
+** DONE Implementar Sokoban
+** DONE Forkear Search-py
+*** DONE Agregar stub para A*
+*** DONE Agregar stub para IDDFS
 
-  Las preguntas públicas respecto a la tarea deben ser hechas a través de
-  [[https://github.com/IIC2613-Inteligencia-Artificial-2021-2/Syllabus/issues/new][/issues/]] en github.
+* Instrucciones
+** Entrega
+   La tarea tiene plazo hasta el 26 de septiembre a las 23:59.
+   Se recolectará el commit en el /default branch/ a la hora de entrega.
 
-* Código
-  Hay implementaciones parciales para ordenar su código detro del proyecto y
-  también tests que se refieren a estas funciones parcialmente implementadas.
-  Como parte de la implementación se espera que pasen los tests deshabilitados.
+** Repositorio
+   Ésta tarea usa ~git~. Usted trabajará individualmente en un /fork/ *privado*
+   del [[https://github.com/IIC2613-Inteligencia-Artificial-2021-2/Search-py][repositorio de la tarea]] al que se le dará acceso mediante github.
 
-  #+caption: Un test deshabilitado. Borrar la línea del /decorator/ de pytest lo habilita.
-  #+begin_src python
-    @pytest.mark.skip(reason="TODO: Implement as part of the assignment.")
-    def test_numbers():
-        assert 0 <= 1, "This holds, right?"
-  #+end_src
+   Su fork debe modificar el código y agregar un documento con las respuestas.
+   Para las preguntas de implementación basta referenciar a su código.
 
-** Tests
-   Puede ejecutar los tests con [[https://pytest.org][~pytest~]]. Note que hay test ignorados marcados
-   con una ~s~ (/skipped/) que eventualmente deberían habilitarse y pasar.
+   Las preguntas públicas respecto a la tarea deben ser hechas a través de
+  [[https://github.com/IIC2613-Inteligencia-Artificial-2021-2/Syllabus/issues/new][ /issues/]] en github.
 
-** Formato
-   El proyecto usa [[https://black.readthedocs.io/][~black~Agregar stub para A*]] para evitar tener que tomar decisiones de formato.
-   Se espera que cada commit pase los checks de ~black .~. De lo contrario se
-   descontarán 0.5 puntos.
+** Integridad
 
-** ~git~ hooks
-   Se recomienda habilitar ~pre-commit~ hooks con tal de evitar romper tests
-   o el formato accidentalmente.
+   Su repositorio debe permanecer privado y se espera que sigan el
+  [[https://www.uc.cl/codigo-de-honor/][ Código de Honor]] de la escuela.
+
+   Toda respuesta debe ser escrita por ti, individualmente.
+   Esto significa que al momento de editar la respuesta, no debes copiar el
+   material hecho por otra persona. Queremos tu comprensión y entendimiento de
+   las cosas que estudies y aprendas. Por lo tanto, las definiciones y análisis
+   que presentes deben venir de tu propio razonamiento.
+
+   También es importante dejar claro que sabemos que estás utilizando material
+   hecho por otras personas, y debes reconocerlo. Es por eso que te pediremos
+   que cites tus fuentes en esta oportunidad. Tienes dos formas de citar. La
+   primera es bastante indirecta, y solamente exige que menciones a tu fuente en
+   tu bibliografı́a.
+   Harás esto cuando hayas aprendido conceptos, los hayas interiorizado, y estés
+   dando tu interpretación. La segunda es más directa, utilizarás las comillas
+   “” para parafrasear algo que se le ocurrió a otra persona, seguido de un
+   paréntesis con la referencia de dónde se encuentra dicho texto. Solamente
+   debes parafrasear cuando quieres darle fuerza a un argumento, jamás para
+   contestar algo que se te pregunte a ti, pues tal respuesta, si bien te evita
+   el plagio, tampoco te da puntaje. Las citas de publicaciones cientı́ficas las
+   puedes poner en cualquier formato de amplia aceptación como APA, ICONTEC e
+   IEEE, por nombrar algunos.
+   Las citas a sitios web las debes hacer referenciando el link del sitio, y la
+   fecha de la que has tomado la referencia. Por favor, no cites a tus
+   compañeros, aprende de ellos, sé crı́tico con sus opiniones, y entrega tu
+   propio trabajo original.
+   Esta misma regla también se cumple respecto del código que entregues.
+
+\newpage
+** Código
+   Hay implementaciones parciales para ordenar su código detro del proyecto y
+   también tests que se refieren a estas funciones parcialmente implementadas.
+   Como parte de la implementación se espera que pasen los tests deshabilitados.
+
+   #+caption: Un test deshabilitado. Borrar la línea del /decorator/ de pytest lo habilita.
+   #+begin_src python
+     @pytest.mark.skip(reason="TODO: Implement as part of the assignment.")
+     def test_numbers():
+         assert 0 <= 1, "This holds, right?"
+   #+end_src
+
+*** Tests
+    Puede ejecutar los tests con [[https://pytest.org][~pytest~]]. Note que hay test ignorados marcados
+    con una ~s~ (/skipped/) que eventualmente deberían habilitarse y pasar.
+
+*** Formato
+    El proyecto usa [[https://black.readthedocs.io/][~black~]] para evitar tener que tomar decisiones de formato.
+    Se espera que cada commit pase los checks de ~black .~. De lo contrario se
+    descontarán 0.5 puntos.
+
+*** ~git~ hooks
+    Se recomienda habilitar ~pre-commit~ hooks con tal de evitar romper tests
+    o el formato accidentalmente.
 
 \newpage
 
 * Búsqueda
 ** Problemas
 *** 15-puzzle
-    El [[https://en.wikipedia.org/wiki/15_puzzle][Puzzle de 15]] fue mencionado en varias ocaciones ya que es bastate
+    El [[https://en.wikipedia.org/wiki/15_puzzle][Puzzle de 15]] fue mencionado en varias ocaciones ya que es bastante
     sencillo obtener buenas heurísticas.
 
     - [0.2] Implemente la heurística mencionada en clases de la suma de las
@@ -156,6 +201,7 @@
       - [0.5] ?`Por qué \astar no es ideal para resolver sudokus?
       - [0.3] ?`Cómo se comporta \astar con $h^*$ en este puzzle de costos uniformes?
 
+\newpage
 ** Algoritmos
 *** ID-DFS
     Los problemas más graves de DFS son que no es completo para grafos
