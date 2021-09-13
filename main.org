@@ -93,7 +93,7 @@
 
 * Instrucciones
 ** Entrega
-   La tarea tiene plazo hasta el 26 de septiembre a las 23:59.
+   La tarea tiene plazo hasta el Miércoles 29 de Septiembre a las 23:59.
    Se recolectará el commit en el /default branch/ a la hora de entrega.
 
 ** Repositorio
