@@ -4,7 +4,6 @@ _minted-*/
 *.bbl
 *.lof
 *.lot
-*.pdf
 *.synctex.gz
 *.tex
 
